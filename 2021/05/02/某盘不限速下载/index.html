@@ -329,13 +329,12 @@ document.addEventListener('visibilitychange', function () {
         c = (b - B) * 60;
         C = Math.floor((b - B) * 60);
         D = Math.floor((c - C) * 60);
-        runtime_span.innerHTML = "小站在各种崩坏中坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+        runtime_span.innerHTML = "小站已坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
     }
 	show_runtime();
 </script>
      </li>
      </ul>
-
 
     <ul>
       <li>
@@ -698,9 +697,8 @@ if (windowWidth > 768) {
 
 
 <!-- 樱花特效 -->
-  {% if theme.sakura.enable %}
       <script async src="/js/fairyDustCursor.js"></script>
-  {% endif %}
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":70,"vOffset":-30},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 
