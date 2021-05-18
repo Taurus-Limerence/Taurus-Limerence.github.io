@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-05-18T10:20:02.943Z</updated>
+  <updated>2021-05-18T11:52:53.249Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>免费登录“外网”</title>
+    <link href="http://example.com/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/"/>
+    <id>http://example.com/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/</id>
+    <published>2021-05-17T16:00:00.000Z</published>
+    <updated>2021-05-18T11:52:53.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如果您想要登录外国网站，例如“Chrome”、”YouTube“、”Twitter“、”TikTok“、”FaceBook“等等，对于中国内陆来说，有很大的访问限制，而这款软件将会破除限制，一键登录”&lt;strong&gt;外网&lt;/strong&gt;“。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="软件" scheme="http://example.com/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Internet" scheme="http://example.com/tags/Internet/"/>
+    
+    <category term="APP" scheme="http://example.com/tags/APP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>破解某运动校园APP</title>
     <link href="http://example.com/2021/05/17/%E7%A0%B4%E8%A7%A3%E6%9F%90%E8%BF%90%E5%8A%A8%E6%A0%A1%E5%9B%ADAPP/"/>
     <id>http://example.com/2021/05/17/%E7%A0%B4%E8%A7%A3%E6%9F%90%E8%BF%90%E5%8A%A8%E6%A0%A1%E5%9B%ADAPP/</id>
     <published>2021-05-16T16:00:00.000Z</published>
-    <updated>2021-05-18T10:20:02.943Z</updated>
+    <updated>2021-05-18T10:31:06.654Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
@@ -32,6 +62,8 @@
     
     
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Internet" scheme="http://example.com/tags/Internet/"/>
     
     <category term="APP" scheme="http://example.com/tags/APP/"/>
     
@@ -42,7 +74,7 @@
     <link href="http://example.com/2021/05/02/%E6%9F%90%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/"/>
     <id>http://example.com/2021/05/02/%E6%9F%90%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/</id>
     <published>2021-05-01T16:00:00.000Z</published>
-    <updated>2021-05-17T00:24:43.644Z</updated>
+    <updated>2021-05-18T10:30:47.106Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
@@ -54,6 +86,8 @@
     
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
+    <category term="Internet" scheme="http://example.com/tags/Internet/"/>
+    
   </entry>
   
   <entry>
@@ -61,7 +95,7 @@
     <link href="http://example.com/2021/04/24/%E7%A9%BF%E8%B6%8A%E6%97%B6%E7%A9%BA%EF%BC%8C%E7%9B%B8%E7%BA%A6%E5%A2%A8%E5%AE%A2/"/>
     <id>http://example.com/2021/04/24/%E7%A9%BF%E8%B6%8A%E6%97%B6%E7%A9%BA%EF%BC%8C%E7%9B%B8%E7%BA%A6%E5%A2%A8%E5%AE%A2/</id>
     <published>2021-04-23T16:00:00.000Z</published>
-    <updated>2021-05-17T00:23:19.586Z</updated>
+    <updated>2021-05-18T10:29:04.965Z</updated>
     
     
       
@@ -79,6 +113,8 @@
     
     
     <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="随记" scheme="http://example.com/tags/%E9%9A%8F%E8%AE%B0/"/>
     
   </entry>
   

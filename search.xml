@@ -20,6 +20,45 @@
       </categories>
       <tags>
         <tag>软件</tag>
+        <tag>Internet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免费登录“外网”</title>
+    <url>/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/</url>
+    <content><![CDATA[<p>如果您想要登录外国网站，例如“Chrome”、”YouTube“、”Twitter“、”TikTok“、”FaceBook“等等，对于中国内陆来说，有很大的访问限制，而这款软件将会破除限制，一键登录”<strong>外网</strong>“。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image@master/valine_emoticon/%E5%BD%A9%E8%99%B9%E6%BB%91%E7%A8%BD.webp"></p>
+<p>详细教程如下：（<strong>以Windows为例，其他系统同理。</strong>）</p>
+<p>1、首先打开网址：<a href="https://ikuuu.org/auth/login">https://ikuuu.org/auth/login</a> 或者<a href="https://ikuuu.co/user/tutorial?os=android&amp;client=clash">https://ikuuu.co/user/tutorial?os=android&amp;client=clash</a> 进行注册、登录。</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518193141.png" style="zoom: 50%;" />
+
+<p>2、登录成功后，点击左侧导航栏下载和教程，选择对应的系统。（对应的<strong>每个系统都有详细的教程</strong>）</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518193358.png" style="zoom: 33%;" />
+
+<p>3、按照提示进行下载安装，完成后打开应用，然后返回网页点击”<strong>一键导入托管配置</strong>“，允许外部协议请求，启动<strong>Clash</strong>。</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518193433.png" style="zoom:33%;" />
+
+<p>4、再根据教程步骤进行操作即可。</p>
+<p>注意：（<strong>一定要看！</strong>）</p>
+<p>①、PC端使用时，可<strong>点击代理——全局——点击小闪电</strong>可以检测<strong>网络延迟</strong>，双击选择延迟最低的结点（<strong>不要选择DIRECT</strong>，这个是<strong>国内结点</strong>），最小化后台运行即可。</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518193742.png" style="zoom: 33%;" />
+
+<p>​        同理，手机端使用时，再代理界面下拉刷新选好节点即可。</p>
+<p>②、因永久免费白嫖，每人每月只有<strong>50G</strong>，每月一日重置，且每天签到可随机<strong>赠送流量</strong>，只要不乱看，每月也用不完。</p>
+<p>完成一切操作后，我们就可以”<strong>为所欲为</strong>“啦！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image@master/valine_emoticon/%E5%BD%A9%E8%99%B9%E6%BB%91%E7%A8%BD.webp"></p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518195125.png" style="zoom: 40%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210518195141.png" style="zoom: 40%;" />
+
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>软件</tag>
+        <tag>Internet</tag>
+        <tag>APP</tag>
       </tags>
   </entry>
   <entry>
@@ -42,6 +81,7 @@
       </categories>
       <tags>
         <tag>软件</tag>
+        <tag>Internet</tag>
         <tag>APP</tag>
       </tags>
   </entry>
@@ -61,6 +101,7 @@
       </categories>
       <tags>
         <tag>生活</tag>
+        <tag>随记</tag>
       </tags>
   </entry>
 </search>
