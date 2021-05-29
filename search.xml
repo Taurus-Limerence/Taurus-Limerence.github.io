@@ -45,8 +45,7 @@
 <h3 id="方法二：在Edge外接程序中下载Tampermonkey插件。"><a href="#方法二：在Edge外接程序中下载Tampermonkey插件。" class="headerlink" title="方法二：在Edge外接程序中下载Tampermonkey插件。"></a><strong>方法二</strong>：在<strong>Edge外接程序</strong>中下载<strong>Tampermonkey插件</strong>。</h3><p>​     1、打开<em><strong>Microsoft Edge</strong></em>浏览器，点击右上角菜单，点击<strong>扩展</strong>；</p>
 <img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529212925.png" style="zoom:40%;" />
 
-<pre><code> 2、左下角，打开**开发人员模式**和允**许来自其他应用商店的扩展**。然后点击[获取 Microsoft Edge 扩展](https://microsoftedge.microsoft.com/addons?hl=zh-CN)；
-</code></pre>
+<p>2、左下角，打开<strong>开发人员模式</strong>和允<strong>许来自其他应用商店的扩展</strong>。然后点击<a href="https://microsoftedge.microsoft.com/addons?hl=zh-CN">获取 Microsoft Edge 扩展</a>；</p>
 <img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529112349.png" style="zoom: 33%;" />
 
 <p>​    3、搜索<strong>Tampermonkey</strong>，点击<strong>获取</strong>，点击添加<strong>扩展</strong>；</p>
