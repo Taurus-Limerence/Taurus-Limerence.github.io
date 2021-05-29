@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Microsoft Edge之油猴脚本最详细安装教程(一)</title>
-    <url>/2021/05/19/Microsoft%20Edge%E4%B9%8B%E6%B2%B9%E7%8C%B4%E6%8F%92%E4%BB%B6(%E4%B8%80)/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image@master/valine_emoticon/%E5%BD%A9%E8%99%B9%E9%A9%AC.gif"></p>
-<p>今天给大家介绍的是大学必备、非常流行、非常方便的一个脚本——<strong>Tampermonkey</strong>,中文名称<strong>油猴脚本管理器</strong>，可以说是号称全商店最强浏览器插件也绝非浪得虚名！</p>
-<p>一个油猴脚本管理器可以代替数十个浏览器插件，有“<strong>浏览器黑科技</strong>”之称。</p>
-<p>油猴提供了诸如便捷脚本安装、自动更新检查、内置的编辑器等众多功能，同时Tampermonkey还有可能正常运行原本并不兼容的脚本。例如：通过Tampermonkey可以在超<strong>新星学习通、U校园、WELearn、中国大学慕课MOOC、知到</strong>进行<strong>刷课、刷题、自动答题、自动播放</strong>，也可以通过Tampermonkey在<strong>中国知网、百度文库</strong>等资源免费下载，还可以在<strong>爱奇艺、腾讯、优酷等全网VIP视频免费观看、破解去广告</strong>，<strong>B站</strong>视频下载等等，功能非常强大。</p>
-<h2 id="详细安装教程如下：（基于Window10-Microsoft-Edge）"><a href="#详细安装教程如下：（基于Window10-Microsoft-Edge）" class="headerlink" title="详细安装教程如下：（基于Window10 Microsoft Edge）"></a><strong>详细安装教程如下：</strong>（<em><strong>基于Window10 Microsoft Edge</strong></em>）</h2><h3 id="方法一：导入Tampermonkey插件压缩包。"><a href="#方法一：导入Tampermonkey插件压缩包。" class="headerlink" title="方法一：导入Tampermonkey插件压缩包。"></a><strong>方法一</strong>：导入<strong>Tampermonkey插件压缩包</strong>。</h3><p>​       1、下载油猴插件：</p>
-<ul>
-<li><p>​    链接: <a href="https://pan.baidu.com/s/136EfHP4VntqDDkolcE_jIQ">https://pan.baidu.com/s/136EfHP4VntqDDkolcE_jIQ</a>  提取码: <strong>67cr</strong> </p>
-</li>
-<li><p>​    压缩包，下载后解压出来。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529210615.png"></p>
-<p>2、打开<em><strong>Microsoft Edge</strong></em>浏览器，点击右上角菜单，点击<strong>扩展</strong>，然后把下载到的油猴插件<strong>拖进浏览器</strong>的扩展程序页面即可安装。</p>
-<img src="../../../picture/%E5%9B%BE31.png" alt="图31" style="zoom: 40%;" />
-
-<img src="../../../picture/%E5%9B%BE32.png" alt="图32" style="zoom:40%;" /></li>
-</ul>
-<h3 id="方法二：在Edge外接程序中下载Tampermonkey插件。"><a href="#方法二：在Edge外接程序中下载Tampermonkey插件。" class="headerlink" title="方法二：在Edge外接程序中下载Tampermonkey插件。"></a><strong>方法二</strong>：在<strong>Edge外接程序</strong>中下载<strong>Tampermonkey插件</strong>。</h3><p>​     1、打开<em><strong>Microsoft Edge</strong></em>浏览器，点击右上角菜单，点击<strong>扩展</strong>；</p>
-<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529212925.png" style="zoom:40%;" />
-
-<pre><code> 2、左下角，打开**开发人员模式**和允**许来自其他应用商店的扩展**。然后点击[获取 Microsoft Edge 扩展](https://microsoftedge.microsoft.com/addons?hl=zh-CN)；
-</code></pre>
-<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529112349.png" style="zoom: 33%;" />
-
-<p>​    3、搜索<strong>Tampermonkey</strong>，点击<strong>获取</strong>，点击添加<strong>扩展</strong>；</p>
-<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529112433.png" style="zoom: 40%;" />
-
-<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529211946.png" style="zoom: 33%;" />
-
-<p>​    4、在工具栏中<strong>显示图标</strong>，就安装完成了。</p>
-<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529212227.png" style="zoom: 50%;" />
-
-
-
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>Microsoft Edge</category>
-      </categories>
-      <tags>
-        <tag>Internet</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>某盘不限速下载</title>
     <url>/2021/05/02/%E6%9F%90%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
@@ -72,7 +27,7 @@
     <title>免费登录“外网”</title>
     <url>/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="34cfca48877926be38281e29c833824cccf4a873692f3134ac20be906fecd738">f842161a9e5a07c6aecdb110fb678cdd351d385ea8bcfe3f6b6d867197e8bf5fe4ee4cb606c2606cdfa847e866d8b0ddab195cff0a507970029a9e8c3b2e32d0d236032edee33349fe92947f7b3b92a0e7742efd6a8556ff02509690bd44d1ef72b10a74f21c126708ed3dd80f1cfd796163e3cb8abeafc47874bc8f740e5b6b4288c30792437ba8b22bb0883924756d7ff5a1cd1a3bc7d43591a45b29b815d8e558eac3c9191f475b9164aaaea5d40f0ca810c6cf709de8976576aeb89401891f770699763542d596ff909678d84981f8919af2049c927d479699f172c42146413b591acae2119c47776016af4b7ccaad73d8ff41d08a209f87455d0566b83383b9a0526af629ec16bdc30789ec56bf132de2cc592c2464d10d8deed34a08bfac5517fc2b8930a5f24914d210c385040a3733da9addc9689e3fbaf3e87749a84832823b3c8ecd83fe6ad198d4cde1657443ac6827000bb77104d6077f64366fb8f5e4d09debed40c7af4c63779ec5382f48298869cba714ae97736a83aba624e27b04d0dd9021ed9a59a5364c725973f7b68964afb49f5ca1695c2fcdac740de87c79cc4cd6bd88c526d14bb3e18d4311ff59a2fed73e9e8ecc24c14c2fbdf1afd809c4e8dacd977217f126c8c28c276d77dc70c5c4c77704da9d4fc1ffdb826cc84a95c4c757d5fbf0702c9775f73d1f84246074d2145ecfa061034f53e47939ec0798bec009f91403a523b5f3178cb2326b96d0bcb82485152834180efcd90eef520cad651c1d4b7abf9daf1844699cd8d154fc3b2c836424254fd967466d3773cc5f564f9f310e6cac723c0e250f8d184e8f3134a8ca00601eba7fd58ab47fedae191f88ddf60167890bc690ce51ee97715d59c4314ec629ed30cce6ae9ecfe221600b8bf60c9a5536cc394ab35e612f6028a53f86b47032e434e4a61c85e2ecc1475357495a2fa899f18bdf7b2555272fff213a19e0fd9067114e84b5dd6d933e33c298d494319e5f722522b0b62a84c18eec216ca61dc1b9bcc521f54905d89bb3b1a4d4b60e9d13f0674b33f047d3334bbe964658b5ba3ff33d4ff80177edf8fc742272c54cdeca3cc46ca4753cfb1f7114402436fb6cd2d66864e57413d796281902f09a7cf6d7cc0ecc320568365d853ed20a19edd9cfc05a9012ef4df74c1d4bb1555de48c252773139e69d8eb861be276dfd3b58e63d2127d8bacfa84de36fc8c00d4e4e86193a1f84210abac6dbd30aa2c453fb84b9c4d27037aa737ba29960e93c23d3348e33f72cb05b62deaca3d9cadcc72feaac9954d27dc32fcaa8cc8d7e0fe7055322aef83924ed9235e4e1cbbc41c328fd73265f4ec5cdbef898dd0e12cf67d2a2765e8c699f70f87adf67b090ac60b079cf15b0e7a069a5acb1100be0dc89de0b322d1c08cddabbc0b9640bc6ef1a784f0e309e83173014d60b8a2f77837781d8bd95a09a8c83a527fb225f195682634ec74e2bcc5b6838d4560983b85802b243ed4638ff59d1022240b64f285dcedb36a2def8ab42d4a3262f06c844cfa3875e4a91712f7890245d8d9e167cb3367602a5a68bfddc918931933c1b62fe7b768be862f0b574cca45fdb1975aa6a1bf74bc58d93fa58f1413d549208e41fda1a37be0315d900d9720a9cdf3b1d7bb8cd9c648241712b56b10ab5be57d33505ef3436aac24dc77c52ffa1928b477a9ce65047c423b83034e63547efe263916b867bcd399587fe1d7f1b49f178bcb11af6c7c973c24fa33669d8a4a6fb91d4270256e1d3562591f81445ebc38156018df0a5d247a1470a5594fdc98fb55ca6785ab56642a714d73db1bd6bbb34c678be8e1f65546cb70bfb4794593cf96e849721502e7084b3af75c199c62cd5b72eea7cb25eb86e32931d6c09aa8c2c91c2f1a50b9bb964088b57571296c34fa6be47378ccda6a853d1fc05d27845e6f307d5edc251539c3bc78a959ee579761d138701d77784069f235302d2c2fc650f7c39b82ea139fca63838f40f5dcb23513231813ae0dccac8f54e5e3527ca377f5e7fc5a4bb33421316c7dc6f10c7f0a1ba5d06631548c0614a772b19d9a99661cf82e5b9dda454bec2626a988a10fd5116c1d29666bbdf4bc09e382f10d9fc87f2e118393af37086639d5e7671a5df610d9d0fc01f5961317bd005d7ce538ad45d08d2f2b86d883e4d548607b885d41521023d21998e7c601d7ab5be3f23cf908b3c775b0531b4db4199e8319218a2e3a5c4da2e92f4e00bc5829259dc50b7cc81a9947f1343bdf02796908bd1ba77c8bd6895a4d724ab2a32a42b30c7f65f0431572a33b7a4f6ea52e84e5366c7315b1c46498b59860468182c0e083661b2949c247285f67039f200de6ca18f88fe5e5ec87bb583ce8fa3604b205e4bb6e6baf8d09e95fafe8d4c4f8a148db9e81cb0cb63538c4ba6e5fcd8380cad11cabee784b23e40f80860943b2bb624c310235329874f632511ca03aa0a77b805d047c6a4c4753b11d87ae1fe9c13f518cff71d4b8dca1666b7f7b19113e4d0e5526fa04d89f6e7770c5168fee13219b360badca94c042e3c92804139d3b8dce305506efdefa511ccc1254e95bad54911776bb115f659dede707c8c77084aa1849918f8ee41f4a53ba879f1b26de87f22d07893be06693f5d9452b1c45af69e8c5477d7557c007d4b5cb38d93e218eb9cd9f514a06cf63c04dbb5ea755b6f5ce7e28100e3cb7a45054718c449e54df18f0f5169b9711c931d2ced36a18095e912a601eb3a9722f5b25c73211b0f9d57bca787f5bf7188a0e8bf39b3d3a654c5c8749061c85d77adbc391d3ed6263d7ec8658eb2d24158f3eb6e1a388e0efb16bf352302d248218fed34cde3afd03d85546562e272f296a14ff8618c871003a4d4f0bd86364dade81b25d368c5def8113f58e953e8400e7cdf7ffd013d21452b0c52e93137b01e4dd754957efc815e18ea8cc6680e16d0b04008bf9cedb6cccac6f39fa1880f8da5cfcd2345a198a656b28f668b074efd0e3771f7822fcdd1e27b389bf95005c65e0c2f09e7ae1e2e67aad1a1bb69bdb4e0ca72224798909aefcf1c916ca21d5ee71091c93dc89d46596dd1f24bb6218a42365c429f0257a1caf4700ece47878c3082b0a91bd94cfda5dd5df881899aa0258a8da809bea0cb7dadeae6fe5940ae38a69b4dfaa49e5c2a9b8238fef4c854c7da59c5eef17d98aa3afdd8a5cb3f0cac6bbb280c248764e5185b9026e8cf04070b541053cc2e03efaccda10ffa556d60d3c2450f557c9afc7a6a29acde77bd8d2ea3486514dfda6cc39dc0593e8c38600c6fba19df7091e632f815eb1f5eefc329c6b7a8bc05c5d4f57ace5595805cb8e25bdf84d11f7f8f298ad52cd221839ba4f5db5b8aa5ac6c944d4b7325605ab97c4580d4650a1e302dcc923dddda28b4b89245615d229e69b23f845ace4746d1b1c9ea91bb222d548836ec94de9fe1dc486ca8540284affe950228df70935ed6ac1e8120ce238951ba2d4613202aaec35c14f2cbe7ed205147c74b9f08bfea74716fa590a598adffece071d3087a4e6b322ba24d3c2cf597256d32e05778e1c9b234c1eed96905312347e73d7ef09581b53e1046a81463b480c472c0c38db40b594456188f1f9766c1ac0cf95ebacab57b6ea5ba5464798855bf50c0fd6989d6c89bd06ae82edef2d51810073cd316d53cac4704449c8672745792ae3e7a6e7f97bf6ff2dca372b2d51d535c99d935c1d6ec158eb771dcda8f27271cbfc864865b33d626ba8d0947ca04b07ceca80d4b0bb714c7c6e</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="1f262a364e05b4194c0d8599971decd1dad61f78cf3c9413e973df9954920fc7">f842161a9e5a07c6aecdb110fb678cdd351d385ea8bcfe3f6b6d867197e8bf5fe4ee4cb606c2606cdfa847e866d8b0ddab195cff0a507970029a9e8c3b2e32d0d236032edee33349fe92947f7b3b92a0e7742efd6a8556ff02509690bd44d1ef72b10a74f21c126708ed3dd80f1cfd796163e3cb8abeafc47874bc8f740e5b6b4288c30792437ba8b22bb0883924756d7ff5a1cd1a3bc7d43591a45b29b815d8e558eac3c9191f475b9164aaaea5d40f0ca810c6cf709de8976576aeb89401891f770699763542d596ff909678d84981f8919af2049c927d479699f172c42146413b591acae2119c47776016af4b7ccaad73d8ff41d08a209f87455d0566b83383b9a0526af629ec16bdc30789ec56bf132de2cc592c2464d10d8deed34a08bfac5517fc2b8930a5f24914d210c385040a3733da9addc9689e3fbaf3e87749a84832823b3c8ecd83fe6ad198d4cde1657443ac6827000bb77104d6077f64366fb8f5e4d09debed40c7af4c63779ec5382f48298869cba714ae97736a83aba62470047d24bc062c49beb9986a8152eaca07fde2a3c9dadc2c2e235f8d55b360aa99bb8a7cf65edd02d7dce6d2d95688f31930d18217f5287c76482c0835f689cc5f6bb5991aba32a8abc40a321507bacb6316410912a71b0030e0bacc4012f6a7719b17fb1c354d5613b787a5a799e902f4749139db97fecbf11d8a2afb942d8c2de5de78e36b4782c19a8924f6585fdfbe92bc99125513c37a700ea575e319fd6f620d4b956ab50d00e90a032873c086cc8e5ad097811be384a8370d59cfaec010dd8b74cc0c90403888b069c68592954a333ac449e73a773887921d8bdab3ed0c8d7fee28f19b2a3b077db8536174ec9caa0d15d34fa3e6b77a8ecad1fecad935a2de724ca59972c2e756fcb007c237976da98cb18eb7bc044bbc730f3deb310ad3caf087619345c9b36c8b57d8e0f9d0f2c0c477c277b72aefacd379ae2b5106a497eb20e7be0993f934285d516da44677fb7055b6696cf3a727fa856e804a684e01a3a45cd569b6ef7d5dca03780d68464f0cdba4dfe5ce1562d33b5a00d776b372573763e4d21127ded020f312ade948d83a0f7b8cfc10f7b61662b308937aaabb9754a7951f2c9746d80d8e2408a8b425875275761b851d0c3792bc4ed00b70b36f99753ef23787da0454a5c96d99c736a96e904b4fe0bdec655adff09669110eb4d31b4d9e261a83f2704beb60b6c9ce47eed4b0452003d4c07fa07c3e880ed8fadf5c1944a2742c9d329c938662aca663d9e1cdf98bde8981aad80281174264d0ddd56e0ad2ed3f20d30fb1976d7015924c25d2aaf9ec5785bf4ad094e63a99126122f23a799837fef5a1f1c68ea2773b87b0af923b69b25ed285ab2f8f530b95f68d2256cba04f5b60a7ba8008d7c5e5addd6c2bd00182c5b87588f52a12f341590ddbf5dd810f648c626f83f237f355970d6836d5f6cc0e54c2369781975843fa252c8a6a024bed1eaa409a77b576d46fb565901a36491468ee20000d9dcd12bd1a388287c9f23c39f2fcb28ce71450265cc8aa8e9642527e048fdcb8977c893af6280eaed028d1b3b6815597839245588a3a0e8ec0bf6a1bb390dafd4d5fe3fe102a182368a836d1002c7bbfc2be20f305b078e1792d57cd17911e5e2fb46925c6ddce278f8aea563fdd7ef2549ec62a460f6c501f995162e2d95ecd0e140c6e00451044ab24ed2ba1bb629664f43dc511ef9aba49a6e9c98985445ebba2bf4521d0ca6969226ef4109086c066e29ba9fe55c755d9e185196481b63768185fafb8ad1c19945b0909e07d9063d59319defe586e32955f8910eccb86fa5e3c6554a7631013075d545b0f3dfacbd6e915ffe4fb352dc41ee8e763d49088ce62ebce10f68e38bd7739084a685f4ba15334f0b7d85359de6cb6bdf42e2afdadcf4990abdcbf5ee177b334bd6d6ff25d9d4249dafa66fbdb66ddeebd7da5f92c002c60f8bc60bd72116114a9edd3629693ad01b311a062adfd6b042bfbe6e3824a95d487eb9a29487b27376430aa2cd9bbfa3eb06f012681a6743e9cc9c455ed3c6a5aeadfc9b68482e405d1457a4c8693f501cb03fface0dfd5bd2bb7ca588e95853331334f8a676c36ba8163365a5ba6e0b60ad6cf73c957d6faeaf09588f89ee4b81a6ef98f3936e39da9d52a248265ef0161e161f5dc0d29cb393ba37514b00f6461c3013d6f77304c5621e358e3b86160b33b74fea85ce7645cd08adaecdbd63c158177c16e7936bca7c3aa25da7533fcca805c32d47d7d41d8d77c4f51d7f436c5e51a688229c761498bfa6c44c117ef38f92473176c5496682b227a575b889fbeb17df80ff1ad6bfde41ff75c3e78bc45076ad0aaaba1f04b22a9e0c8b584a0e15fcb7a6335d1fbccd87713d671b6eef9a05ef3a9925aa1afb8334e80cd1e27b8dfe3f7b9cc021cf41a0fb24599b02f004d6fcb5debc5fbb0db4c2adab911cc9ef5cb2ba772df08e2ba92f20ba49693b8707e61bb837e48e94ae62ec592d482c23e617752c71f4f5621a1ecbf3a2d2d7b38e77f302a4765d5f55e83e478938717403ccf2c0fbf6c13c15528698a73b82bbd173204dea78dfa47e8a547c134103d1a4ad3b558765e74ac7b123d2c0192af3447fdf84f576bf6229d529b47fc3342b49c65ecd1703e856307320ecdcbe99058025e91a8f803ac2a76a089733a493490a7dd939f11cc485cc36f58f090021661343c0e0bab1595276db6359b01ec11a44f9c34df9f2b0dc0cbf4ea4ae26e6c26b30b6fe0ca27f1f7c570818aa646194b0327f1af4425f7fd05a4927e8f9cf5a6323a6c7ba1c0a9e79791b1bdd7e21bf27e523942ad06bae7dd5e6c65e5a4e1d7da2e4a8ef5183b8298c4f5854ec7719d71dc8a079e0674a9250f543cf294948c3087e6d15cbf3a8c3e970018a09bfb3e8d3dab304a7f3ccc0ce8d4aee099e16a650a8c777fd360e3560dc0abe980664a9d837e4b0c1225a5a9f49fba3063969ea8795d332f8be43f9408087cf1f1aa7a5cfb4ac2a7b26b946bfc936ff158b0943d0c7932b87e2a197a327f2c1567f79d4192d77d853a58a40e13c043098b8bd2a587b72311a853598c66f801535b7823f7a5868cecafb87f00df8685657b3fe514ac9ed16f544d8816db3bf49fec0ea2d6140e1dfb5ff265f5219bed08a1063e051a8abf617cdda1ea4664ecccddb37e57f99947f1408e2d6495203d8565245a8b7e7d055391db11bc57e964b719c6ab6a024e0b2142e924f0f3d476784f356131c93816258ec32a14f9194b46fe61d090e799fec020bd946974cc26e10cf45a75d454ae6c392e79132e67ba45025922a7288e20e1382901d1cee51919c40e398055773785f10728b58dc93a15553a33f7aa08488984d600e0d39d0cb1261cd7a1d5c56bf75366bdf24232e77b7ab67320bfc4a614f7e6f408c183c11f95e729b8251deed7ca04488a9b88b9c49c3ce1773f99f532dceb345842e1fac20fe37f3db5d3becc8a2f5c0d2e596e07bdfa44825e40daeadbf255ba8845071aad8dca9dedb9d5bae270a90c3e1bd1fd05cce93b619b661cc5200388709e2830217ede66602876b266a5fa0349325cf97f35cb051e78759c1dcdba3c02852e119870f78ea95d774d7f39bb6cc5ef2e18c5641e62d7ae5cec5cb4667e49136da0743dc78f920216fdbc0fc6e3d473989ef5b2a0f88da30c74c6cf575fa4367a6440f9e02f695187e64d53cb87a9a8180f55b4d33612a88ab784e1853b62ca92a0a1e75dca497df01ed9f7c11133fa1bdb4b15819c49a584dfe868f0440419af4d1843ccdbd6fc608124270416bb439bd1b715ca3a6a6b167e49ed518fc3ff69ed44b77d7cc7ebd48d320275a24e50f228a46f1dc871ef73aa88e4bf09c3faf341602af3b04544648a46b9b78b0d551294f6417501785b8b6839f895a742e8cf88015999144295d7ba01ae1eb00781446d8e7972db3d5a2c9a30fcd34bcf4fdf171ea392449c4651c97ba1493cadc4797cb1a2d1233cfd8b55dd86b42a183fea31c0595d3201095ea26ba4b2610f795c0d82d9150b062b2ad251b51d3eb9bf7ac0d8571c1d0f2b35a65fa6a6ff33e2d5a119cf2caba181c63795f7e164df505144e1b2da49a00fad7399ac08fb5c73b4dd99f36c1a009c66505b6d19e6c9dd6be0e0e64f1eea703f4ca525db913cec4b2924f03d5d9bdea0ccb77055f212d824011e3043e7e414718e550cdbe52da0c34cd946b31517e249b05b9a4535d3fc7e3e376e57278c66188f30b338db8f400de92f8ea34a3be69597f4572077ef68ede9f6eb5aa4e9543a296ad9ebcde044dc5dcd0d9a79ea035ebc1a5f5a3ff8d61b4b5d21202d49cd89c6fad2580dc7145484a4d321df399948e071ef2ad71104215c3949b13440d267095b69b7d69d477b9eb7d6fa868a7780d506117609b907f774095785d31be278346051193a68d1e55b1a0fecc19e3f70186161bf5d9120ca4dc9e35a3e62d835d2a4a8e135efa9b7db1ac23a616cb5a90e613ff3db7f1e2f66b5c24f7632d04f100fa69e0be87f094849ae1ad7e71a4913a37b3f0891e45b8b50c892007a4573e764c03bca58c59fdf67cdbb1a1858b815333af42fd902dd0dbe43f9d9762196d7f43fc9b6ce566fbd928be829bcd6bb7386990ce8f581b0a9a646591c61f32d7da7cab5c2c00e726973cebdf4d597e487fe23921867b3256a38f082a876ec89a7d53b324ebf3bed225e9bfee5cd82d63f70be22d8831c943d8cab36439862fbe48da5bbdcc6323e921bebea2641143f3ce7f2a2277d24ceadd81fb7fc945aa78b8614ce7ebe1638ebf6cead5bc8e71fcaed3d134b12b5660bb19bc42efb8fe08d0c31cba791b6c52a9824da0eba73fb0145821a9e2f36dd2a24b9d2fcbd5ede52d45135f9765189c13289a70ae224dd1a62890fa09ab988e83c130abeac1c80cb2436ed79873ca5f16e9d20d0cd4f2d86cb9b1887cbb44c8828efc4476e2258412c41dd78dddfaa8eb2bb81d791683c80a0baf4dca46c18744cdd79848e86356e5e3b7f44e9723e9f08d998e3280faa4d3bd9685e16bd04cd3ebe54e7ad4e468a00d8e91c53f82d1517c15d4025d1d32aa835749a60d10d135ee731c6dfdcb816a5eb7003070424d6edd482dd76922ce798140b43703e267aa4010c2a886a88a9ac6886f2caf18c51025e242b12bfacf0bba49039a6366519a7dd3af7bd83d9002f6d669ed43f114d1625d9b6c3566200653f57e6847af2834596126d6cfdda2178dd891698531809c59eb9f0cd033573a53aa9ca00d06ec3d7ede7b38e6042575d250cb9804539eb1d29ce2b540c17c6c24507c7d7529b290b61ca01b2d3fd4f6430acca39324cc7f51134abf5b427a616da30ad422105db4e31281707dee4f77128703e05a30bb1395e4db31a2d7742dc72163722ef5869c801e9cc128d153cac753713d4b47c7928c2bf55823727ab0ccb2647b5370bd961dc36229962b1d23381644357b0700d0d7e348f280ada58db2dbf053c33ab0a4c35dc2bd1007bccc8579f14341eca75a3efcb3cd6bd140a7d4366aa94737825f84e5e90b84d3de5f127220f3a88de981e5a6167ca55b4f1711549d861b83064c2575119068e1b50fb83fea93344465e546c6ddedd7791343a97fdbcc7e3a9f91a237d66772011d534e661bc6eb811b6ee28c506e90b364cf67fab5213f587343f7780812cae19a7d1e7c2c89b6c2a8e74c939a1647feb761e5d3a5562e99b01fe4f298f68ae5f13d153345237b3e659850c71e482913791cf750f2f6fb6406cfd24f33c22f55d965197ada29233ab3d29bf495ffa238fff2296394cf77b0ece9369666e7d7a2dc23cec5caf9eb2bd8c942e1bff7a7d22d2b1e7aae8b75e161264e36cea85a493f9e88c7f8eeeee05c720a87b1b7c4f511f4b1b8dbd3f4d790630b3ce9c642ba52a3e48810000aa8025fac14c774404926d605182124670cf0cc26efe11feb3261bf9c61e73ff9dd113a816aae0b353788bf5ff5d4e6456dfbae7c4b71d939dfda9c5994393604e5e37bf9dccdfb9d5d3c667b556070b70c16ff93a358f305dfc9cab8fee28f719e16e247954e2bdd34a368f3d4884ea009dc5275dd3ea068290e0fd091cae4d3b12b0acf2a973b37eea1104289520e507a6189b46af41540b5d11a34c139e079a9b93405a8007d315e9163c09ee8294d79c4b9064da05faf825722a7d4b14d1f6d847a73d65967350ec6eb9fe8a4d3e697f2fa835b7c59bbeff97cee021bf84e0011a25c9c92ea4a7489e4ee44429c4a86198a1c5d33589c7e238122c6bcc1384f4b79c081402d97360ce1261ee07d8f9fc9ff3718843f6c520e93cbf2da8d90fb315f12ea6134358829fa8fa1858dfe5e24067cffe5b848bea9154ca0365f26522feedd76a12ca518ae25a71cee4ad5d9a6094733f356a91ff4db293cd0e</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -134,6 +89,51 @@
       <tags>
         <tag>生活</tag>
         <tag>随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Microsoft Edge之油猴脚本最详细安装教程(一)</title>
+    <url>/2021/05/19/Microsoft%20Edge%E4%B9%8B%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E6%9C%80%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E4%B8%80)/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image@master/valine_emoticon/%E5%BD%A9%E8%99%B9%E9%A9%AC.gif"></p>
+<p>今天给大家介绍的是大学必备、非常流行、非常方便的一个脚本——<strong>Tampermonkey</strong>,中文名称<strong>油猴脚本管理器</strong>，可以说是号称全商店最强浏览器插件也绝非浪得虚名！</p>
+<p>一个油猴脚本管理器可以代替数十个浏览器插件，有“<strong>浏览器黑科技</strong>”之称。</p>
+<p>油猴提供了诸如便捷脚本安装、自动更新检查、内置的编辑器等众多功能，同时Tampermonkey还有可能正常运行原本并不兼容的脚本。例如：通过Tampermonkey可以在超<strong>新星学习通、U校园、WELearn、中国大学慕课MOOC、知到</strong>进行<strong>刷课、刷题、自动答题、自动播放</strong>，也可以通过Tampermonkey在<strong>中国知网、百度文库</strong>等资源免费下载，还可以在<strong>爱奇艺、腾讯、优酷等全网VIP视频免费观看、破解去广告</strong>，<strong>B站</strong>视频下载等等，功能非常强大。</p>
+<h2 id="详细安装教程如下：（基于Window10-Microsoft-Edge）"><a href="#详细安装教程如下：（基于Window10-Microsoft-Edge）" class="headerlink" title="详细安装教程如下：（基于Window10 Microsoft Edge）"></a><strong>详细安装教程如下：</strong>（<em><strong>基于Window10 Microsoft Edge</strong></em>）</h2><h3 id="方法一：导入Tampermonkey插件压缩包。"><a href="#方法一：导入Tampermonkey插件压缩包。" class="headerlink" title="方法一：导入Tampermonkey插件压缩包。"></a><strong>方法一</strong>：导入<strong>Tampermonkey插件压缩包</strong>。</h3><p>​       1、下载油猴插件：</p>
+<ul>
+<li><p>​    链接: <a href="https://pan.baidu.com/s/136EfHP4VntqDDkolcE_jIQ">https://pan.baidu.com/s/136EfHP4VntqDDkolcE_jIQ</a>  提取码: <strong>67cr</strong> </p>
+</li>
+<li><p>​    压缩包，下载后解压出来。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529210615.png"></p>
+<p>2、打开<em><strong>Microsoft Edge</strong></em>浏览器，点击右上角菜单，点击<strong>扩展</strong>，然后把下载到的油猴插件<strong>拖进浏览器</strong>的扩展程序页面即可安装。</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529213512.png" style="zoom:40%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529213531.png" style="zoom:40%;" /></li>
+</ul>
+<h3 id="方法二：在Edge外接程序中下载Tampermonkey插件。"><a href="#方法二：在Edge外接程序中下载Tampermonkey插件。" class="headerlink" title="方法二：在Edge外接程序中下载Tampermonkey插件。"></a><strong>方法二</strong>：在<strong>Edge外接程序</strong>中下载<strong>Tampermonkey插件</strong>。</h3><p>​     1、打开<em><strong>Microsoft Edge</strong></em>浏览器，点击右上角菜单，点击<strong>扩展</strong>；</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529212925.png" style="zoom:40%;" />
+
+<pre><code> 2、左下角，打开**开发人员模式**和允**许来自其他应用商店的扩展**。然后点击[获取 Microsoft Edge 扩展](https://microsoftedge.microsoft.com/addons?hl=zh-CN)；
+</code></pre>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529112349.png" style="zoom: 33%;" />
+
+<p>​    3、搜索<strong>Tampermonkey</strong>，点击<strong>获取</strong>，点击添加<strong>扩展</strong>；</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529112433.png" style="zoom: 40%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529211946.png" style="zoom: 33%;" />
+
+<p>​    4、在工具栏中<strong>显示图标</strong>，就安装完成了。</p>
+<img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210529212227.png" style="zoom: 50%;" />
+
+
+
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>Microsoft Edge</category>
+      </categories>
+      <tags>
+        <tag>Internet</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
 </search>
