@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>分享最新“Vue前端”开发规范心得，值得您拥有！ |  Dream chaser</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <!-- mermaid -->
+      
+
+<script type="text/javascript">
+// 浏览器搞笑标题
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+	if (location.href != "https://www.xxxzhy.com/"){//主页不变
+		if (document.hidden) {
+			//$('[rel="icon"]').attr('href', "/funny.ico");
+			document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+			clearTimeout(titleTime);
+		}else {
+			//$('[rel="icon"]').attr('href', "/favicon.ico");
+			document.title = '(ฅ>ω<*ฅ) 噫又好啦~' + OriginTitle;
+			titleTime = setTimeout(function () {
+				document.title = OriginTitle;
+			}, 2000);
+		}
+	}
+});
+</script>
+
+    <link rel="alternate" href="/atom.xml" title="Dream chaser" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-分享最新“Vue前端”开发规范心得，值得您拥有！"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  分享最新“Vue前端”开发规范心得，值得您拥有！
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/06/06/%E5%88%86%E4%BA%AB%E6%9C%80%E6%96%B0%E2%80%9CVue%E5%89%8D%E7%AB%AF%E2%80%9D%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%BF%83%E5%BE%97%EF%BC%8C%E5%80%BC%E5%BE%97%E6%82%A8%E6%8B%A5%E6%9C%89%EF%BC%81/" class="article-date">
+  <time datetime="2021-06-05T16:00:00.000Z" itemprop="datePublished">2021-06-06</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><img src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210606112822.jpeg" alt="在这里插入图片描述"></p>
+<h2 id="一、强制方法"><a href="#一、强制方法" class="headerlink" title="一、强制方法"></a>一、强制方法</h2><h3 id="1）-组件数据"><a href="#1）-组件数据" class="headerlink" title="1） 组件数据"></a>1） 组件数据</h3><p>组件的 data 必须是一个函数。<br>当在组件中使用 data 属性的时候 (除了 new Vue 外的任何地方)，它的值必须是返回一个对象的函数。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; In a .vue file</span><br><span class="line">export default &#123;</span><br><span class="line"> data () &#123;</span><br><span class="line"> return &#123;</span><br><span class="line"> foo: &#39;bar&#39;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 在一个 Vue 的根实例上直接使用对象是可以的，</span><br><span class="line">&#x2F;&#x2F; 因为只存在一个这样的实例。</span><br><span class="line">new Vue(&#123;</span><br><span class="line"> data: &#123;</span><br><span class="line"> foo: &#39;bar&#39;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line"> data: &#123;</span><br><span class="line"> foo: &#39;bar&#39;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2）组件名为多个单词"><a href="#2）组件名为多个单词" class="headerlink" title="2）组件名为多个单词"></a>2）组件名为多个单词</h3><p>组件名应该始终是多个单词的，根组件 App 除外。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line"> name: &#39;TodoItem&#39;,</span><br><span class="line"> &#x2F;&#x2F; ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line"> name: &#39;Todo&#39;,</span><br><span class="line"> &#x2F;&#x2F; ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3）为v-for设置键值"><a href="#3）为v-for设置键值" class="headerlink" title="3）为v-for设置键值"></a>3）为v-for设置键值</h3><p>总是用 key 配合 v-for。<br>在组件上_总是_必须用 key 配合 v-for，以便维护内部组件及其子树的状态。甚至在元素上维护可预测的行为，比如动画中的对象固化 (object constancy)，也是一种好的做法。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line"> &lt;li</span><br><span class="line"> v-for&#x3D;&quot;todo in todos&quot;</span><br><span class="line"> :key&#x3D;&quot;todo.id&quot;</span><br><span class="line"> &gt;</span><br><span class="line"> &#123;&#123; todo.text &#125;&#125;</span><br><span class="line"> &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line"> &lt;li v-for&#x3D;&quot;todo in todos&quot;&gt;</span><br><span class="line"> &#123;&#123; todo.text &#125;&#125;</span><br><span class="line"> &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="4）Prop定义"><a href="#4）Prop定义" class="headerlink" title="4）Prop定义"></a>4）Prop定义</h3><p>Prop 定义应该尽量详细。<br>在你提交的代码中，prop 的定义应该尽量详细，至少需要指定其类型。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line"> status: String</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 更好的方法！</span><br><span class="line">props: &#123;</span><br><span class="line"> status: &#123;</span><br><span class="line"> type: String,</span><br><span class="line"> required: true,</span><br><span class="line"> validator: function (value) &#123;</span><br><span class="line"> return [</span><br><span class="line"> &#39;syncing&#39;,</span><br><span class="line"> &#39;synced&#39;,</span><br><span class="line"> &#39;version-conflict&#39;,</span><br><span class="line"> &#39;error&#39;</span><br><span class="line"> ].indexOf(value) !&#x3D;&#x3D; -1</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>反例：<br>// 这样做只有开发原型系统时可以接受使用！<br><code>props: [&#39;status&#39;]</code></p>
+<h3 id="5）为组件样式设置作用域"><a href="#5）为组件样式设置作用域" class="headerlink" title="5）为组件样式设置作用域"></a>5）为组件样式设置作用域</h3><p>对于应用来说，顶级 App 组件和布局组件中的样式可以是全局的，但是其它所有组件都应该是有作用域的。<br>这条规则只和单文件组件有关。你不一定要使用 scoped 特性。设置作用域也可以通过 CSS Modules，那是一个基于 class 的类似 BEM 的策略，当然你也可以使用其它的库或约定。<br>不管怎样，对于组件库，我们应该更倾向于选用基于 class 的策略而不是 scoped 特性。<br>这让覆写内部样式更容易：使用了常人可理解的 class 名称且没有太高的选择器优先级，而且不太会导致冲突。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;button class&#x3D;&quot;c-Button c-Button--close&quot;&gt;X&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;!-- 使用 BEM 约定 --&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.c-Button &#123;</span><br><span class="line"> border: none;</span><br><span class="line"> border-radius: 2px;</span><br><span class="line">&#125;</span><br><span class="line">.c-Button--close &#123;</span><br><span class="line"> background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;button class&#x3D;&quot;btn btn-close&quot;&gt;X&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.btn-close &#123;</span><br><span class="line"> background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;button class&#x3D;&quot;button button-close&quot;&gt;X&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;!-- 使用 &#96;scoped&#96; 特性 --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.button &#123;</span><br><span class="line"> border: none;</span><br><span class="line"> border-radius: 2px;</span><br><span class="line">&#125;</span><br><span class="line">.button-close &#123;</span><br><span class="line"> background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="6）避免-v-if-和-v-for-用在一起"><a href="#6）避免-v-if-和-v-for-用在一起" class="headerlink" title="6）避免 v-if 和 v-for 用在一起"></a>6）避免 v-if 和 v-for 用在一起</h3><p>永远不要把 v-if 和 v-for 同时用在同一个元素上。<br>一般我们在两种常见的情况下会倾向于这样做：<br>为了过滤一个列表中的项目 (比如 <code>v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;</code>)。在这种情形下，请将 users 替换为一个计算属性 (比如 activeUsers)，让其返回过滤后的列表。<br>为了避免渲染本应该被隐藏的列表 (比如<code>v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;</code>)。这种情形下，请将 v-if 移动至容器元素上 (比如 ul, ol)。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul v-if&#x3D;&quot;shouldShowUsers&quot;&gt;</span><br><span class="line"> &lt;li</span><br><span class="line"> v-for&#x3D;&quot;user in users&quot;</span><br><span class="line"> :key&#x3D;&quot;user.id&quot;</span><br><span class="line"> &gt;</span><br><span class="line"> &#123;&#123; user.name &#125;&#125;</span><br><span class="line"> &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line"> &lt;li</span><br><span class="line"> v-for&#x3D;&quot;user in users&quot;</span><br><span class="line"> v-if&#x3D;&quot;shouldShowUsers&quot;</span><br><span class="line"> :key&#x3D;&quot;user.id&quot;</span><br><span class="line"> &gt;</span><br><span class="line"> &#123;&#123; user.name &#125;&#125;</span><br><span class="line"> &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="二、强烈推荐（增强可读性）"><a href="#二、强烈推荐（增强可读性）" class="headerlink" title="二、强烈推荐（增强可读性）"></a>二、强烈推荐（增强可读性）</h2><h3 id="1）基础组件名"><a href="#1）基础组件名" class="headerlink" title="1）基础组件名"></a>1）基础组件名</h3><p>应用特定样式和约定的基础组件 (也就是展示类的、无逻辑的或无状态的组件) 应该全部以一个特定的前缀开头，比如 Base、App 或 V。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- BaseButton.vue</span><br><span class="line">|- BaseTable.vue</span><br><span class="line">|- BaseIcon.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- MyButton.vue</span><br><span class="line">|- VueTable.vue</span><br><span class="line">|- Icon.vue</span><br></pre></td></tr></table></figure>
+<h3 id="2）组件文件"><a href="#2）组件文件" class="headerlink" title="2）组件文件"></a>2）组件文件</h3><p>只要有能够拼接文件的构建系统，就把每个组件单独分成文件。<br>当你需要编辑一个组件或查阅一个组件的用法时，可以更快速的找到它。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- TodoList.vue</span><br><span class="line">|- TodoItem.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#39;TodoList&#39;, &#123;</span><br><span class="line"> &#x2F;&#x2F; ...</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(&#39;TodoItem&#39;, &#123;</span><br><span class="line"> &#x2F;&#x2F; ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3）单文件组件文件的大小写"><a href="#3）单文件组件文件的大小写" class="headerlink" title="3）单文件组件文件的大小写"></a>3）单文件组件文件的大小写</h3><p>单文件组件的文件名应该要么始终是单词大写开头 (PascalCase)<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- MyComponent.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- myComponent.vue</span><br><span class="line">|- mycomponent.vue</span><br></pre></td></tr></table></figure>
+
+<h3 id="4）-紧密耦合的组件名"><a href="#4）-紧密耦合的组件名" class="headerlink" title="4） 紧密耦合的组件名"></a>4） 紧密耦合的组件名</h3><p>和父组件紧密耦合的子组件应该以父组件名作为前缀命名。<br>如果一个组件只在某个父组件的场景下有意义，这层关系应该体现在其名字上。因为编辑器通常会按字母顺序组织文件，所以这样做可以把相关联的文件排在一起。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- TodoList.vue</span><br><span class="line">|- TodoListItem.vue</span><br><span class="line">|- TodoListItemButton.vue</span><br><span class="line">components&#x2F;</span><br><span class="line">|- SearchSidebar.vue</span><br><span class="line">|- SearchSidebarNavigation.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- SearchSidebar.vue</span><br><span class="line">|- NavigationForSearchSidebar.vue</span><br></pre></td></tr></table></figure>
+<h3 id="5）单例组件名"><a href="#5）单例组件名" class="headerlink" title="5）单例组件名"></a>5）单例组件名</h3><p>只应该拥有单个活跃实例的组件应该以 The 前缀命名，以示其唯一性。<br>这不意味着组件只可用于一个单页面，而是每个页面只使用一次。这些组件永远不接受任何 prop，因为它们是为你的应用定制的，而不是它们在你的应用中的上下文。如果你发现有必要添加 prop，那就表明这实际上是一个可复用的组件，只是目前在每个页面里只使用一次。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- TheHeading.vue</span><br><span class="line">|- TheSidebar.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- Heading.vue</span><br><span class="line">|- MySidebar.vue</span><br></pre></td></tr></table></figure>
+<h3 id="6）模板中的组件名大小写"><a href="#6）模板中的组件名大小写" class="headerlink" title="6）模板中的组件名大小写"></a>6）模板中的组件名大小写</h3><p>总是 PascalCase 的<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在单文件组件和字符串模板中 --&gt;</span><br><span class="line">&lt;MyComponent&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在单文件组件和字符串模板中 --&gt;</span><br><span class="line">&lt;mycomponent&#x2F;&gt;</span><br><span class="line">&lt;!-- 在单文件组件和字符串模板中 --&gt;</span><br><span class="line">&lt;myComponent&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7）组件名中的单词顺序"><a href="#7）组件名中的单词顺序" class="headerlink" title="7）组件名中的单词顺序"></a>7）组件名中的单词顺序</h3><p>组件名应该以高级别的 (通常是一般化描述的) 单词开头，以描述性的修饰词结尾。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- SearchButtonClear.vue</span><br><span class="line">|- SearchButtonRun.vue</span><br><span class="line">|- SearchInputQuery.vue</span><br><span class="line">|- SearchInputExcludeGlob.vue</span><br><span class="line">|- SettingsCheckboxTerms.vue</span><br><span class="line">|- SettingsCheckboxLaunchOnStartup.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- ClearSearchButton.vue</span><br><span class="line">|- ExcludeFromSearchInput.vue</span><br><span class="line">|- LaunchOnStartupCheckbox.vue</span><br><span class="line">|- RunSearchButton.vue</span><br><span class="line">|- SearchInput.vue</span><br><span class="line">|- TermsCheckbox.vue</span><br></pre></td></tr></table></figure>
+
+<h3 id="8）简单的计算属性"><a href="#8）简单的计算属性" class="headerlink" title="8）简单的计算属性"></a>8）简单的计算属性</h3><p>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line"> basePrice: function () &#123;</span><br><span class="line"> return this.manufactureCost &#x2F; (1 - this.profitMargin)</span><br><span class="line"> &#125;,</span><br><span class="line"> discount: function () &#123;</span><br><span class="line"> return this.basePrice * (this.discountPercent || 0)</span><br><span class="line"> &#125;,</span><br><span class="line"> finalPrice: function () &#123;</span><br><span class="line"> return this.basePrice - this.discount</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line"> price: function () &#123;</span><br><span class="line"> var basePrice &#x3D; this.manufactureCost &#x2F; (1 - this.profitMargin)</span><br><span class="line"> return (</span><br><span class="line"> basePrice -</span><br><span class="line"> basePrice * (this.discountPercent || 0)</span><br><span class="line"> )</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="9）完整单词的组件名"><a href="#9）完整单词的组件名" class="headerlink" title="9）完整单词的组件名"></a>9）完整单词的组件名</h3><p>组件名应该倾向于完整单词而不是缩写。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- StudentDashboardSettings.vue</span><br><span class="line">|- UserProfileOptions.vue</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components&#x2F;</span><br><span class="line">|- SdSettings.vue</span><br><span class="line">|- UProfOpts.vue</span><br></pre></td></tr></table></figure>
+<h3 id="10）-多个特性的元素"><a href="#10）-多个特性的元素" class="headerlink" title="10） 多个特性的元素"></a>10） 多个特性的元素</h3><p>多个特性的元素应该分多行撰写，每个特性一行。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;img</span><br><span class="line"> src&#x3D;&quot;https:&#x2F;&#x2F;vuejs.org&#x2F;images&#x2F;logo.png&quot;</span><br><span class="line"> alt&#x3D;&quot;Vue Logo&quot;</span><br><span class="line">&gt;</span><br><span class="line">&lt;MyComponent</span><br><span class="line"> foo&#x3D;&quot;a&quot;</span><br><span class="line"> bar&#x3D;&quot;b&quot;</span><br><span class="line"> baz&#x3D;&quot;c&quot;</span><br><span class="line">&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;https:&#x2F;&#x2F;vuejs.org&#x2F;images&#x2F;logo.png&quot; alt&#x3D;&quot;Vue Logo&quot;&gt;</span><br><span class="line">&lt;MyComponent foo&#x3D;&quot;a&quot; bar&#x3D;&quot;b&quot; baz&#x3D;&quot;c&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="11）模板中简单的表达式"><a href="#11）模板中简单的表达式" class="headerlink" title="11）模板中简单的表达式"></a>11）模板中简单的表达式</h3><p>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。<br>复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的是什么，而非如何计算那个值。而且计算属性和方法使得代码可以重用。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在模板中 --&gt;</span><br><span class="line">&#123;&#123; normalizedFullName &#125;&#125;</span><br><span class="line">&#x2F;&#x2F; 复杂表达式已经移入一个计算属性</span><br><span class="line">computed: &#123;</span><br><span class="line"> normalizedFullName: function () &#123;</span><br><span class="line"> return this.fullName.split(&#39; &#39;).map(function (word) &#123;</span><br><span class="line"> return word[0].toUpperCase() + word.slice(1)</span><br><span class="line"> &#125;).join(&#39; &#39;)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>反例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;</span><br><span class="line"> fullName.split(&#39; &#39;).map(function (word) &#123;</span><br><span class="line"> return word[0].toUpperCase() + word.slice(1)</span><br><span class="line"> &#125;).join(&#39; &#39;)</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12）单文件组件的顶级元素的顺序"><a href="#12）单文件组件的顶级元素的顺序" class="headerlink" title="12）单文件组件的顶级元素的顺序"></a>12）单文件组件的顶级元素的顺序</h3><p><code>单文件组件应该总是让&lt;script&gt;、&lt;template&gt; 和 &lt;style&gt; 标签的顺序保持一致。且 &lt;style&gt; 要放在最后，因为另外两个标签至少要有一个。</code><br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- ComponentA.vue --&gt;</span><br><span class="line">&lt;template&gt;...&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;&#x2F;* ... *&#x2F;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;&#x2F;* ... *&#x2F;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/06/06/%E5%88%86%E4%BA%AB%E6%9C%80%E6%96%B0%E2%80%9CVue%E5%89%8D%E7%AB%AF%E2%80%9D%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%BF%83%E5%BE%97%EF%BC%8C%E5%80%BC%E5%BE%97%E6%82%A8%E6%8B%A5%E6%9C%89%EF%BC%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/06/01/Python%20%E6%9E%81%E8%87%B4%E4%BC%98%E5%8C%96%E6%8F%90%E9%80%9F%E7%9A%847%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%81/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Python极致优化提速的7个小技巧！</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script> -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- 评论背景 -->                                                         
+<style>
+    #veditor{min-height: 10rem;
+        background-image: url(https://gitee.com/cungudafa/source/raw/master/img/gif/katon/pinkcoolpig.gif);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+</style>
+<!-- Valine配置 --> 
+<script>
+    new Valine({
+        el: '#vcomments',
+		enableQQ: true,
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        //notify: '',
+        //verify: '',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true,
+		
+		// 设置Bilibili表情包地址
+		emojiCDN: 'https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/valine_emoticon/', 
+		// 表情title和图片映射
+		emojiMaps: {
+			"墙角滑稽": "害怕滑稽.gif",
+			"仙女下凡": "仙女下凡.webp",
+			"听歌": "听歌.webp",
+			"嫌弃": "嫌弃.webp",
+			"害羞": "害羞.webp",
+			"彩虹滑稽": "彩虹滑稽.webp",
+			"快走": "快走.webp",
+			"扯脸": "扯脸.webp",
+			"摸脸": "摸脸.webp",
+			"流汗": "流汗.webp",
+			"滑滑板": "滑滑板.webp",
+			"点赞": "点赞.webp",
+			"转圈圈": "转圈圈.webp",
+                                                  "tv_偷笑": "tv_偷笑.png",	
+	 		 "tv_再见": "tv_再见.png",
+			"tv_冷漠": "tv_冷漠.png",
+			 "tv_发怒": "tv_发怒.png",
+			 "tv_发财": "tv_发财.png",
+ 			"tv_可爱": "tv_可爱.png",
+			 "tv_吐血": "tv_吐血.png",
+ 			"tv_呆": "tv_呆.png",
+			"tv_困": "tv_困.png",
+			"tv_呕吐": "tv_呕吐.png",
+			"tv_坏笑": "tv_坏笑.png",
+			"tv_大佬": "tv_大佬.png",
+			"tv_大哭": "tv_大哭.png",
+			"tv_委屈": "tv_委屈.png",
+			"tv_害羞": "tv_害羞.png",
+			"tv_尴尬": "tv_尴尬.png",
+			"tv_微笑": "tv_微笑.png",
+			"tv_思考": "tv_思考.png",
+			"tv_惊吓": "tv_惊吓.png",
+			"tv_打脸": "tv_打脸.png",
+			"tv_抓狂": "tv_抓狂.png",
+			"tv_抠鼻": "tv_抠鼻.png",
+			"tv_斜眼笑": "tv_斜眼笑.png",
+			"tv_无奈": "tv_无奈.png",
+			"tv_晕": "tv_晕.png",
+			"tv_流汗": "tv_流汗.png",
+			"tv_流泪": "tv_流泪.png",
+			"tv_流鼻血": "tv_流鼻血.png",
+			"tv_点赞": "tv_点赞.png",
+			"tv_生气": "tv_生气.png",
+			"tv_生病": "tv_生病.png",
+			"tv_疑问": "tv_疑问.png",
+			"tv_白眼": "tv_白眼.png",
+			"tv_皱眉": "tv_皱眉.png",
+			"tv_目瞪口呆": "tv_目瞪口呆.png",
+			"tv_睡着": "tv_睡着.png",
+			"tv_笑哭": "tv_笑哭.png",
+			"tv_腼腆": "tv_腼腆.png",	
+			"tv_色": "tv_色.png",	
+			"tv_调侃": "tv_调侃.png",	
+			"tv_难过": "tv_难过.png",	
+			"tv_调皮": "tv_调皮.png",	
+			"tv_鄙视": "tv_鄙视.png",	
+			"tv_闭嘴": "tv_闭嘴.png",	
+			"tv_馋": "tv_馋.png",	
+			"tv_鬼脸": "tv_鬼脸.png",	
+			"tv_馋": "tv_馋.png",	
+			"tv_黑人问号": "tv_黑人问号.png",	
+			"tv_鼓掌": "tv_鼓掌.png",	
+			// ... 更多表情
+		} 	
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+
+<!-- 运行天数 -->
+     <ul>
+     <li>
+	<span id="runtime_span"></span>
+	<script type="text/javascript">			
+    function show_runtime() {
+        window.setTimeout("show_runtime()", 1000);
+        X = new Date("04/24/2021 22:22:22");
+        Y = new Date();
+        T = (Y.getTime() - X.getTime());
+        M = 24 * 60 * 60 * 1000;
+        a = T / M;
+        A = Math.floor(a);
+        b = (a - A) * 24;
+        B = Math.floor(b);
+        c = (b - B) * 60;
+        C = Math.floor((b - B) * 60);
+        D = Math.floor((c - C) * 60);
+        runtime_span.innerHTML = "小站已坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+    }
+	show_runtime();
+</script>
+      </li>
+      </ul>
+
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2021
+        <i class="ri-heart-fill heart_icon"></i> 小浝仔
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Dream chaser"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210505201241.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210505201038.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+    
+  </div>
+
+ <!-- 樱花特效 -->
+      <script async src="/js/fairyDustCursor.js"></script>
+
+  <!-- 三角彩带背景 -->
+  <canvas id="evanyou-canvas" style="opacity: 0.3; position: fixed; top: 0px; left: 0px; z-index: -1; width: 100%; height: 100%; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/js/evanyou_canvas.js"></script>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":70,"vOffset":-30},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+
+</html>
