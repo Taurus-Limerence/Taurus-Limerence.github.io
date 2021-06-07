@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>分享Python基础之“进制和数据类型”心得！ |  Dream chaser</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <!-- mermaid -->
+      
+
+<script type="text/javascript">
+// 浏览器搞笑标题
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+	if (location.href != "https://www.xxxzhy.com/"){//主页不变
+		if (document.hidden) {
+			//$('[rel="icon"]').attr('href', "/funny.ico");
+			document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+			clearTimeout(titleTime);
+		}else {
+			//$('[rel="icon"]').attr('href', "/favicon.ico");
+			document.title = '(ฅ>ω<*ฅ) 噫又好啦~' + OriginTitle;
+			titleTime = setTimeout(function () {
+				document.title = OriginTitle;
+			}, 2000);
+		}
+	}
+});
+</script>
+
+    <link rel="alternate" href="/atom.xml" title="Dream chaser" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-分享Python基础之“进制和数据类型”心得！"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  分享Python基础之“进制和数据类型”心得！
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/06/07/%E5%88%86%E4%BA%ABPython%E5%9F%BA%E7%A1%80%E4%B9%8B%E2%80%9C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%9D%E5%BF%83%E5%BE%97%EF%BC%81/" class="article-date">
+  <time datetime="2021-06-06T16:00:00.000Z" itemprop="datePublished">2021-06-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><img src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image@master/valine_emoticon/%E5%BD%A9%E8%99%B9%E9%A9%AC.gif"></p>
+<img src="https://img-blog.csdnimg.cn/img_convert/9031261dad24a9f3bfa2fae17b5872dd.png" alt="动漫甜美傲娇美少女微信头像5" style="zoom:50%;" />
+
+<h2 id="大家好！今天小柒缘给大家分享一些Python基础-进制和数据类型），一起来看看吧"><a href="#大家好！今天小柒缘给大家分享一些Python基础-进制和数据类型），一起来看看吧" class="headerlink" title="大家好！今天小柒缘给大家分享一些Python基础 (进制和数据类型），一起来看看吧~"></a>大家好！今天小柒缘给大家分享一些Python基础 (进制和数据类型），一起来看看吧~</h2><h2 id="一、进制"><a href="#一、进制" class="headerlink" title="一、进制"></a>一、进制</h2><h3 id="1、什么是进制？"><a href="#1、什么是进制？" class="headerlink" title="1、什么是进制？"></a>1、什么是进制？</h3><p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的“正”字计数法，以及类似的tally mark计数）。对于任何一种进制—X进制，就表示每一位置上的数运算时都是逢X进一位。十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，以此类推，x进制就是逢x进位。（来自百度）</p>
+<p>通俗的解释，所谓的进制就是一种计数时表示的方法，多少进制，就是当满足此进制时就向高位进一位。</p>
+<h3 id="2-进制转换"><a href="#2-进制转换" class="headerlink" title="2. 进制转换"></a>2. 进制转换</h3><p>Python中可以通过内置函数int()函数进行二进制转十进制；int()函数可以将一个指定进制的数字型字符串或者十进制数字转化为整型。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int(object,base)</span><br></pre></td></tr></table></figure>
+
+<p><strong>返回值：</strong>返回整型数据。</p>
+<p>将二进制数转化为十进制数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test &#x3D; [&#39;111011011111&#39;, &#39;0b110&#39;]for number in test:</span><br><span class="line">    print(int(number, 2))</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p>将八进制数转化为十进制数。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210607080938251.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test &#x3D; [&#39;-1537202&#39;, &#39;125&#39;]</span><br><span class="line">for number in test:    print(int(number, 8))</span><br></pre></td></tr></table></figure>
+
+<p>运行 结果 ：</p>
+<p><img src="https://img-blog.csdnimg.cn/202106070810044.png" alt="img"></p>
+<h2 id="二、数值类型"><a href="#二、数值类型" class="headerlink" title="二、数值类型"></a>二、数值类型</h2><h2 id="1-布尔型"><a href="#1-布尔型" class="headerlink" title="1. 布尔型"></a>1. 布尔型</h2><p>布尔型其实是整型的子类型，布尔型数据只有两个取值：True和False，分别对应整型的1和0。</p>
+<p>每一个Python对象都天生具有布尔值（True或False），进而可用于布尔测试（如用在if、while中）。</p>
+<p>以下对象的布尔值都是False：</p>
+<table>
+<thead>
+<tr>
+<th align="center">返回值</th>
+<th align="center">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">False</td>
+<td align="center">（布尔型）</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">（整型0）</td>
+</tr>
+<tr>
+<td align="center">0L</td>
+<td align="center">（长整型0）</td>
+</tr>
+<tr>
+<td align="center">0.0</td>
+<td align="center">（浮点型0）</td>
+</tr>
+<tr>
+<td align="center">0.0+0.0j</td>
+<td align="center">(复数0)</td>
+</tr>
+<tr>
+<td align="center">“”</td>
+<td align="center">(空字符串）</td>
+</tr>
+<tr>
+<td align="center">[]</td>
+<td align="center">(空列表）</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">(空元组）</td>
+</tr>
+<tr>
+<td align="center">{}</td>
+<td align="center">(空字典）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>用户自定义的 类实例，该类定义了方法 <strong>nonzero</strong>() 或 <strong>len</strong>()，并且这些方法返回0或False。</li>
+<li>除上述对象之外的所有其他对象的布尔值都为True。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 1. Python对象的布尔值&gt;&gt;&gt; bool(None)False&gt;&gt;&gt; bool(False), bool(0), bool(0L), bool(0.0), bool(0.0+0.0j)(False, False, False, False, False)&gt;&gt;&gt; bool(&#39;&#39;), bool([]), bool(()), bool(&#123;&#125;)(False, False, False, False)</span><br><span class="line"># 2. 数值运算中，布尔值True和False分别对应整型的1和0&gt;&gt;&gt; int(True), int(2 &lt; 1)(1, 0)&gt;&gt;&gt; False + 100100  #输出结果&gt;&gt;&gt; True + 100101  #输出结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-复数"><a href="#2-复数" class="headerlink" title="2. 复数"></a>2. 复数</h2><p>复数与数学中的复数概念完全相同。Python中的复数有以下几个特性：</p>
+<ul>
+<li>复数由实数部分和虚数部分构成，表示为：real+imagj 或 real+imagJ。</li>
+<li>复数的实部real和虚部imag都是浮点型。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; 1+2j&gt;&gt;&gt; a  (1+2j)  #输出结果&gt;&gt;&gt; a.real # 实部1.0     #输出结果&gt;&gt;&gt; type(a.real)float   #输出结果&gt;&gt;&gt; a.imag # 虚部2.0     #输出结果&gt;&gt;&gt; type(a.imag)float   #输出结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-浮点型"><a href="#3-浮点型" class="headerlink" title="3. 浮点型"></a>3. 浮点型</h2><p>浮点型类似于C中的双精度浮点型（double）。浮点型字面值可以用十进制或科学计数法表示，在科学计数法中，e或E代表10，+（可以省略）或 - 表示指数的正负。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; type(1)int   #输出结果&gt;&gt;&gt; type(1.0)float  #输出结果&gt;&gt;&gt; 1 + 1.02.0  #输出结果&gt;&gt;&gt; a &#x3D; 1e-2&gt;&gt;&gt; a  #输出结果0.01&gt;&gt;&gt; type(a)float   #输出结果&gt;&gt;&gt; pi &#x3D; 3.1415926&gt;&gt;&gt; round(pi)3.0  #输出结果&gt;&gt;&gt; round(pi, 4)3.1416  #输出结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-整型"><a href="#4-整型" class="headerlink" title="4. 整型"></a>4. 整型</h2><p>整型等价于C语言中的有符号长整型（long），与系统的最大整型一致（如32位机器上的整型是32位，64位机器上的整型是64位），可以表示的范围有限。整型字面值的表示方法有3种：十进制（常用）、二进制（以“0b”开头）、八进制（以数字“0”开头）和十六进制（以“0x”或“0X”开头）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; 0b10100 &gt;&gt;&gt; type(a)int   #输出结果&gt;&gt;&gt; a20  #输出结果&gt;&gt;&gt; bin(20), oct(20), hex(20)(&#39;0b10100&#39;, &#39;024&#39;, &#39;0x14&#39;)  # 输出结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-string（字符串）"><a href="#5-string（字符串）" class="headerlink" title="5. string（字符串）"></a>5. string（字符串）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">str1 = <span class="string">&#x27;Hello&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(str1[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p>字符串需要用单引号 ’ ’ 或双引号 “ “ 括起来 三引号–注释<br> 字符串也是一种特殊的元组。不能改变字符串中的某个元素的值<br> String类型运算：+ 对多个字符串进行连接 * 重复输出字符串n次 字符串名[： ] 截取字符串的一部分（最左边索引值为0，最右边索引值为-1，倒数第二索引值为-2…）字符串名[ ] 通过索引获取字符串中单个字符 in/not in 判断单个字符是/不是在字符串中 r/R 将转义字符等特殊字符也当成普通字符<br> 基础操作：索引、切片、乘法-多次输出、成员资格检查、长度len()、最大值、最小值</p>
+<h2 id="6-长整型"><a href="#6-长整型" class="headerlink" title="6. 长整型"></a>6. 长整型</h2><p>长整型是整型的超集，可以表示无限大的整数。长整型字面值的后面带有字母“L”或“l”（使用大写的“L”）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a &#x3D; 999 ** 8  # 整型自动转换为长整型&gt;&gt;&gt; a8920457944069944027201L&gt;&gt;&gt; type(a)long  </span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>版权声明： 本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！</li>
+</ul>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/06/07/%E5%88%86%E4%BA%ABPython%E5%9F%BA%E7%A1%80%E4%B9%8B%E2%80%9C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%9D%E5%BF%83%E5%BE%97%EF%BC%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/06/06/%E5%88%86%E4%BA%AB%E6%9C%80%E6%96%B0%E2%80%9CVue%E5%89%8D%E7%AB%AF%E2%80%9D%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E5%BF%83%E5%BE%97%EF%BC%8C%E5%80%BC%E5%BE%97%E6%82%A8%E6%8B%A5%E6%9C%89%EF%BC%81/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">分享最新“Vue前端”开发规范心得，值得您拥有！</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!-- <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script> -->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!-- 评论背景 -->                                                         
+<style>
+    #veditor{min-height: 10rem;
+        background-image: url(https://gitee.com/cungudafa/source/raw/master/img/gif/katon/pinkcoolpig.gif);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+</style>
+<!-- Valine配置 --> 
+<script>
+    new Valine({
+        el: '#vcomments',
+		enableQQ: true,
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        //notify: '',
+        //verify: '',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true,
+		
+		// 设置Bilibili表情包地址
+		emojiCDN: 'https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/valine_emoticon/', 
+		// 表情title和图片映射
+		emojiMaps: {
+			"墙角滑稽": "害怕滑稽.gif",
+			"仙女下凡": "仙女下凡.webp",
+			"听歌": "听歌.webp",
+			"嫌弃": "嫌弃.webp",
+			"害羞": "害羞.webp",
+			"彩虹滑稽": "彩虹滑稽.webp",
+			"快走": "快走.webp",
+			"扯脸": "扯脸.webp",
+			"摸脸": "摸脸.webp",
+			"流汗": "流汗.webp",
+			"滑滑板": "滑滑板.webp",
+			"点赞": "点赞.webp",
+			"转圈圈": "转圈圈.webp",
+                                                  "tv_偷笑": "tv_偷笑.png",	
+	 		 "tv_再见": "tv_再见.png",
+			"tv_冷漠": "tv_冷漠.png",
+			 "tv_发怒": "tv_发怒.png",
+			 "tv_发财": "tv_发财.png",
+ 			"tv_可爱": "tv_可爱.png",
+			 "tv_吐血": "tv_吐血.png",
+ 			"tv_呆": "tv_呆.png",
+			"tv_困": "tv_困.png",
+			"tv_呕吐": "tv_呕吐.png",
+			"tv_坏笑": "tv_坏笑.png",
+			"tv_大佬": "tv_大佬.png",
+			"tv_大哭": "tv_大哭.png",
+			"tv_委屈": "tv_委屈.png",
+			"tv_害羞": "tv_害羞.png",
+			"tv_尴尬": "tv_尴尬.png",
+			"tv_微笑": "tv_微笑.png",
+			"tv_思考": "tv_思考.png",
+			"tv_惊吓": "tv_惊吓.png",
+			"tv_打脸": "tv_打脸.png",
+			"tv_抓狂": "tv_抓狂.png",
+			"tv_抠鼻": "tv_抠鼻.png",
+			"tv_斜眼笑": "tv_斜眼笑.png",
+			"tv_无奈": "tv_无奈.png",
+			"tv_晕": "tv_晕.png",
+			"tv_流汗": "tv_流汗.png",
+			"tv_流泪": "tv_流泪.png",
+			"tv_流鼻血": "tv_流鼻血.png",
+			"tv_点赞": "tv_点赞.png",
+			"tv_生气": "tv_生气.png",
+			"tv_生病": "tv_生病.png",
+			"tv_疑问": "tv_疑问.png",
+			"tv_白眼": "tv_白眼.png",
+			"tv_皱眉": "tv_皱眉.png",
+			"tv_目瞪口呆": "tv_目瞪口呆.png",
+			"tv_睡着": "tv_睡着.png",
+			"tv_笑哭": "tv_笑哭.png",
+			"tv_腼腆": "tv_腼腆.png",	
+			"tv_色": "tv_色.png",	
+			"tv_调侃": "tv_调侃.png",	
+			"tv_难过": "tv_难过.png",	
+			"tv_调皮": "tv_调皮.png",	
+			"tv_鄙视": "tv_鄙视.png",	
+			"tv_闭嘴": "tv_闭嘴.png",	
+			"tv_馋": "tv_馋.png",	
+			"tv_鬼脸": "tv_鬼脸.png",	
+			"tv_馋": "tv_馋.png",	
+			"tv_黑人问号": "tv_黑人问号.png",	
+			"tv_鼓掌": "tv_鼓掌.png",	
+			// ... 更多表情
+		} 	
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+
+<!-- 运行天数 -->
+     <ul>
+     <li>
+	<span id="runtime_span"></span>
+	<script type="text/javascript">			
+    function show_runtime() {
+        window.setTimeout("show_runtime()", 1000);
+        X = new Date("04/24/2021 22:22:22");
+        Y = new Date();
+        T = (Y.getTime() - X.getTime());
+        M = 24 * 60 * 60 * 1000;
+        a = T / M;
+        A = Math.floor(a);
+        b = (a - A) * 24;
+        B = Math.floor(b);
+        c = (b - B) * 60;
+        C = Math.floor((b - B) * 60);
+        D = Math.floor((c - C) * 60);
+        runtime_span.innerHTML = "小站已坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+    }
+	show_runtime();
+</script>
+      </li>
+      </ul>
+
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2021
+        <i class="ri-heart-fill heart_icon"></i> 小浝仔
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Dream chaser"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210505201241.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Taurus-Limerence/myblog@main/img/20210505201038.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+    
+  </div>
+
+ <!-- 樱花特效 -->
+      <script async src="/js/fairyDustCursor.js"></script>
+
+  <!-- 三角彩带背景 -->
+  <canvas id="evanyou-canvas" style="opacity: 0.3; position: fixed; top: 0px; left: 0px; z-index: -1; width: 100%; height: 100%; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/js/evanyou_canvas.js"></script>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":70,"vOffset":-30},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+
+</html>
