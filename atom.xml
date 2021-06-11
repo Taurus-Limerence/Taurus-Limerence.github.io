@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-07T00:31:51.433Z</updated>
+  <updated>2021-06-11T00:32:14.762Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux系统常用命令速查手册，建议收藏！</title>
+    <link href="http://example.com/2021/06/11/Linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C%EF%BC%8C%E5%BB%BA%E8%AE%AE%E6%94%B6%E8%97%8F%EF%BC%81/"/>
+    <id>http://example.com/2021/06/11/Linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C%EF%BC%8C%E5%BB%BA%E8%AE%AE%E6%94%B6%E8%97%8F%EF%BC%81/</id>
+    <published>2021-06-10T16:00:00.000Z</published>
+    <updated>2021-06-11T00:32:14.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Internet" scheme="http://example.com/tags/Internet/"/>
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>分享Python基础之“进制和数据类型”心得！</title>
@@ -156,7 +183,7 @@
     <link href="http://example.com/2021/05/30/Microsoft%20Edge%E4%B9%8B%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E6%9C%80%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E4%B8%89)/"/>
     <id>http://example.com/2021/05/30/Microsoft%20Edge%E4%B9%8B%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC%E6%9C%80%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B(%E4%B8%89)/</id>
     <published>2021-05-29T16:00:00.000Z</published>
-    <updated>2021-05-30T03:10:37.857Z</updated>
+    <updated>2021-06-11T00:51:21.793Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
@@ -219,14 +246,14 @@
     <link href="http://example.com/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/"/>
     <id>http://example.com/2021/05/18/%E5%85%8D%E8%B4%B9%E7%99%BB%E5%BD%95%E2%80%9C%E5%A4%96%E7%BD%91%E2%80%9D/</id>
     <published>2021-05-17T16:00:00.000Z</published>
-    <updated>2021-05-29T13:42:56.707Z</updated>
+    <updated>2021-06-11T00:22:42.724Z</updated>
     
     
     <summary type="html">有东西被加密了, 请输入密码查看.</summary>
     
     
     
-    <category term="软件" scheme="http://example.com/categories/%E8%BD%AF%E4%BB%B6/"/>
+    <category term="VPN" scheme="http://example.com/categories/VPN/"/>
     
     
     <category term="Internet" scheme="http://example.com/tags/Internet/"/>
@@ -234,6 +261,8 @@
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
     <category term="APP" scheme="http://example.com/tags/APP/"/>
+    
+    <category term="VPN" scheme="http://example.com/tags/VPN/"/>
     
   </entry>
   
