@@ -276,6 +276,8 @@ document.addEventListener('visibilitychange', function () {
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <!-- <script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script> -->
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="../js/src/Valine.min.js"></script>
+
 <!-- 评论背景 -->                                                         
 <style>
     #veditor{min-height: 10rem;
@@ -294,7 +296,7 @@ document.addEventListener('visibilitychange', function () {
         app_id: 'VnrPHXBswEbxlI17YPixybla-gzGzoHsz',
         app_key: 'P32q5ftiqdUjs1FJTX74E8gD',
         path: window.location.pathname,
-        //notify: '',
+        //notify: 'true# 邮箱通知 , https://github.com/xCss/Valine/wiki，默认为false',
         //verify: '',
         avatar: 'monsterid',
         placeholder: '给我的文章加点评论吧~',
@@ -375,6 +377,27 @@ document.addEventListener('visibilitychange', function () {
             item.parentNode.removeChild(item);
         });
     }
+</script>
+
+<script>
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    })
 </script>
 
 <style>
