@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-14T12:33:37.008Z</updated>
+  <updated>2021-10-30T03:52:36.370Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++期末课程设计——宾馆客房管理系统(详细报告+源代码+详细注释)</title>
+    <link href="http://example.com/2021/10/30/C++%E6%9C%9F%E6%9C%AB%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E5%AE%BE%E9%A6%86%E5%AE%A2%E6%88%BF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F(%E8%AF%A6%E7%BB%86%E6%8A%A5%E5%91%8A+%E6%BA%90%E4%BB%A3%E7%A0%81+%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A)/"/>
+    <id>http://example.com/2021/10/30/C++%E6%9C%9F%E6%9C%AB%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E5%AE%BE%E9%A6%86%E5%AE%A2%E6%88%BF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F(%E8%AF%A6%E7%BB%86%E6%8A%A5%E5%91%8A+%E6%BA%90%E4%BB%A3%E7%A0%81+%E8%AF%A6%E7%BB%86%E6%B3%A8%E9%87%8A)/</id>
+    <published>2021-10-29T16:00:00.000Z</published>
+    <updated>2021-10-30T03:52:36.370Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="http://example.com/categories/C/"/>
+    
+    
+    <category term="C" scheme="http://example.com/tags/C/"/>
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>让Python提速超过40倍的神器：Cython</title>
