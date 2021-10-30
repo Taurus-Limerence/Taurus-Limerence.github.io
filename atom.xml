@@ -64,9 +64,9 @@
     <category term="Python" scheme="http://example.com/categories/Python/"/>
     
     
-    <category term="APP" scheme="http://example.com/tags/APP/"/>
-    
     <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+    <category term="APP" scheme="http://example.com/tags/APP/"/>
     
   </entry>
   
@@ -91,9 +91,9 @@
     <category term="Python" scheme="http://example.com/categories/Python/"/>
     
     
-    <category term="APP" scheme="http://example.com/tags/APP/"/>
-    
     <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+    <category term="APP" scheme="http://example.com/tags/APP/"/>
     
     <category term="Streamlit" scheme="http://example.com/tags/Streamlit/"/>
     
